@@ -1,0 +1,56 @@
+crypto:
+  feistel:
+    rounds: 8
+    max_cycle_walks: 1000
+    prf: "HMAC-SHA256"
+
+  hash:
+    algorithm: "SHA-256"
+    seed_min_entropy_bits: 64
+
+  randomness_sources:
+    - id: "dice"
+      name: "Dice Ceremony"
+      description: "Roll physical dice — enter results manually"
+      type: "manual"
+      entropy_bits: 66
+      recommended_dice_count: 20
+      dice_sides: 10
+
+    - id: "drand"
+      name: "drand Beacon (League of Entropy)"
+      description: "Public randomness beacon — 256-bit values every 30s"
+      type: "beacon"
+      entropy_bits: 256
+      api_url: "https://api.drand.sh/public/latest"
+      chain_hash: "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"
+
+    - id: "manual"
+      name: "Custom Seed"
+      description: "Enter any string as seed (hashed with SHA-256)"
+      type: "manual"
+      entropy_bits: null
+
+    - id: "hybrid"
+      name: "Hybrid (Dice + Beacon)"
+      description: "Combine dice rolls with drand beacon — recommended for high-stakes draws"
+      type: "hybrid"
+      entropy_bits: 322
+      recommended: true
+
+    - id: "multi_party"
+      name: "Multi-Party Ceremony"
+      description: "Multiple parties each contribute random values"
+      type: "multi_party"
+      entropy_bits: null
+
+  verification:
+    algorithm_version: "1.0.0"
+    include_in_proof:
+      - "seed"
+      - "algorithm_version"
+      - "preset_id"
+      - "teams_hash"
+      - "constraints_hash"
+      - "cycle_walk_count"
+      - "timestamp_utc"

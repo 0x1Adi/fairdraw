@@ -1,0 +1,61 @@
+# ⚠️  PLACEHOLDER DATA — Teams and rankings are approximate as of 2026-04-04.
+# Update with actual qualified teams once FIFA confirms the final 48.
+# Pot assignments are based on estimated FIFA rankings and may change.
+# The algorithm works regardless of team data — only names and metadata matter.
+
+teams:
+  # Pot 1 (top 12 by FIFA ranking — these become group headers)
+  - { name: "USA", confederation: "CONCACAF", pot: 1, is_host: true, ranking: 1 }
+  - { name: "Mexico", confederation: "CONCACAF", pot: 1, is_host: true, ranking: 2 }
+  - { name: "Canada", confederation: "CONCACAF", pot: 1, is_host: true, ranking: 3 }
+  - { name: "Argentina", confederation: "CONMEBOL", pot: 1, ranking: 4 }
+  - { name: "France", confederation: "UEFA", pot: 1, ranking: 5 }
+  - { name: "England", confederation: "UEFA", pot: 1, ranking: 6 }
+  - { name: "Brazil", confederation: "CONMEBOL", pot: 1, ranking: 7 }
+  - { name: "Spain", confederation: "UEFA", pot: 1, ranking: 8 }
+  - { name: "Germany", confederation: "UEFA", pot: 1, ranking: 9 }
+  - { name: "Portugal", confederation: "UEFA", pot: 1, ranking: 10 }
+  - { name: "Netherlands", confederation: "UEFA", pot: 1, ranking: 11 }
+  - { name: "Belgium", confederation: "UEFA", pot: 1, ranking: 12 }
+
+  # Pot 2 (rankings 13-24)
+  - { name: "Colombia", confederation: "CONMEBOL", pot: 2, ranking: 13 }
+  - { name: "Italy", confederation: "UEFA", pot: 2, ranking: 14 }
+  - { name: "Croatia", confederation: "UEFA", pot: 2, ranking: 15 }
+  - { name: "Morocco", confederation: "CAF", pot: 2, ranking: 16 }
+  - { name: "Japan", confederation: "AFC", pot: 2, ranking: 17 }
+  - { name: "Uruguay", confederation: "CONMEBOL", pot: 2, ranking: 18 }
+  - { name: "Denmark", confederation: "UEFA", pot: 2, ranking: 19 }
+  - { name: "Senegal", confederation: "CAF", pot: 2, ranking: 20 }
+  - { name: "South Korea", confederation: "AFC", pot: 2, ranking: 21 }
+  - { name: "Switzerland", confederation: "UEFA", pot: 2, ranking: 22 }
+  - { name: "Austria", confederation: "UEFA", pot: 2, ranking: 23 }
+  - { name: "Australia", confederation: "AFC", pot: 2, ranking: 24 }
+
+  # Pot 3 (rankings 25-36)
+  - { name: "Ukraine", confederation: "UEFA", pot: 3, ranking: 25 }
+  - { name: "Turkey", confederation: "UEFA", pot: 3, ranking: 26 }
+  - { name: "Poland", confederation: "UEFA", pot: 3, ranking: 27 }
+  - { name: "Serbia", confederation: "UEFA", pot: 3, ranking: 28 }
+  - { name: "Ecuador", confederation: "CONMEBOL", pot: 3, ranking: 29 }
+  - { name: "Iran", confederation: "AFC", pot: 3, ranking: 30 }
+  - { name: "Nigeria", confederation: "CAF", pot: 3, ranking: 31 }
+  - { name: "Cameroon", confederation: "CAF", pot: 3, ranking: 32 }
+  - { name: "Ghana", confederation: "CAF", pot: 3, ranking: 33 }
+  - { name: "Tunisia", confederation: "CAF", pot: 3, ranking: 34 }
+  - { name: "Egypt", confederation: "CAF", pot: 3, ranking: 35 }
+  - { name: "Saudi Arabia", confederation: "AFC", pot: 3, ranking: 36 }
+
+  # Pot 4 (rankings 37-48)
+  - { name: "Paraguay", confederation: "CONMEBOL", pot: 4, ranking: 37 }
+  - { name: "Costa Rica", confederation: "CONCACAF", pot: 4, ranking: 38 }
+  - { name: "Jamaica", confederation: "CONCACAF", pot: 4, ranking: 39 }
+  - { name: "Honduras", confederation: "CONCACAF", pot: 4, ranking: 40 }
+  - { name: "Panama", confederation: "CONCACAF", pot: 4, ranking: 41 }
+  - { name: "Qatar", confederation: "AFC", pot: 4, ranking: 42 }
+  - { name: "China", confederation: "AFC", pot: 4, ranking: 43 }
+  - { name: "Iraq", confederation: "AFC", pot: 4, ranking: 44 }
+  - { name: "Algeria", confederation: "CAF", pot: 4, ranking: 45 }
+  - { name: "Mali", confederation: "CAF", pot: 4, ranking: 46 }
+  - { name: "New Zealand", confederation: "OFC", pot: 4, ranking: 47 }
+  - { name: "Peru", confederation: "CONMEBOL", pot: 4, ranking: 48 }

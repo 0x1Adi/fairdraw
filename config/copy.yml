@@ -1,0 +1,320 @@
+# ═══════════════════════════════════════════════════════════════
+# USER-FACING COPY — Written for humans, not engineers
+# This file overrides ALL visible text in the app.
+# The crypto engine stays technical internally.
+# But nothing the user SEES should require a CS degree.
+# ═══════════════════════════════════════════════════════════════
+
+# ─────────────────────────────────────────────
+# BRAND OVERRIDES — these values should match brand.yml
+# If they diverge, copy.yml wins for user-facing text
+# ─────────────────────────────────────────────
+brand:
+  tagline: "Fair draws anyone can check."
+  description: "The draw tool that proves nobody cheated."
+  meta_description: "Run tournament draws, lottery picks, and group assignments that anyone can independently verify. No trust required — just math."
+
+# ─────────────────────────────────────────────
+# TERMINOLOGY MAP — never use the left column
+# in any user-facing text. Always use the right.
+# ─────────────────────────────────────────────
+terminology:
+  # TECHNICAL TERM              → PLAIN ENGLISH
+  cryptographic:                  "tamper-proof"
+  cryptographically_verifiable:   "anyone can check"
+  seed:                           "public number"
+  SHA-256_hash:                   "digital fingerprint"
+  format_preserving_encryption:   # NEVER MENTION. Invisible.
+  feistel_cipher:                 # NEVER MENTION. Invisible.
+  combinadic:                     # NEVER MENTION. Invisible.
+  cycle_walking:                  # NEVER MENTION. Just say "searching for a valid arrangement"
+  permutation:                    "arrangement"
+  bijective:                      "every number gives exactly one result"
+  zero_failure:                   "always works, no retries"
+  constant_time:                  # NEVER MENTION. Invisible.
+  entropy:                        # NEVER MENTION. Just say "randomness"
+  HMAC:                           # NEVER MENTION. Invisible.
+  WebCrypto:                      # NEVER MENTION. Invisible.
+  FPE:                            # NEVER MENTION. Invisible.
+  proof_object:                   "receipt"
+  verification:                   '"check" or "double-check"'
+  deterministic:                  "same number always gives the same result"
+  drand_beacon:                   "independent random number service"
+  BigInt:                         # NEVER MENTION. Invisible.
+  rank_unrank:                    # NEVER MENTION. Invisible.
+  PRP_security:                   # NEVER MENTION. Invisible.
+  constraint_satisfaction:        "rules are followed"
+  domain_size:                    # NEVER MENTION. Invisible.
+
+# ─────────────────────────────────────────────
+# HOME PAGE
+# ─────────────────────────────────────────────
+home:
+  hero:
+    headline: "Was the draw fair? Now you can prove it."
+    subheadline: "Run tournament draws, lottery picks, and group assignments that anyone can independently check. No trust required."
+    cta_primary: "Run a Fair Draw"
+    cta_secondary: "Check a Result"
+
+  how_it_works:
+    title: "How it works"
+    subtitle: "Three steps. No trust required."
+    steps:
+      - number: 1
+        title: "Set up your draw"
+        description: "Add your teams, names, or items. Choose how many groups you need. Set any rules — like 'no two teams from the same country in one group.'"
+        icon: "clipboard-list"
+
+      - number: 2
+        title: "Pick a public number"
+        description: "Roll dice on camera, use a live internet randomness source, or let multiple people each contribute a number. This is the one number that decides everything — and everyone can see it."
+        icon: "dice-5"
+
+      - number: 3
+        title: "Get your result — with a receipt"
+        description: "The draw runs instantly. You get your groups AND a shareable link. Anyone with that link can re-run the exact same draw and confirm the result is real. No one can fake it."
+        icon: "shield-check"
+
+  trust_section:
+    title: "Why does this matter?"
+    points:
+      - icon: "alert-triangle"
+        title: "Draws can be rigged"
+        description: "In 2021, UEFA had to void and redo a Champions League draw due to a software error — with 'rigged' trending worldwide. In 2025, a mathematician proved FIFA's own draw method is biased."
+
+      - icon: "eye-off"
+        title: "Current draws are a black box"
+        description: "When FIFA, a school district, or a housing authority runs a draw, you're told 'trust us.' But no one can check their work. There's no receipt, no proof, no way to verify."
+
+      - icon: "check-circle"
+        title: "We give you the receipt"
+        description: "Our draws produce a shareable receipt that anyone can check — a teacher, a journalist, a lawyer, or just a curious fan. Same public number always gives the same result. Period."
+
+  preset_cards:
+    title: "Ready-made templates"
+    subtitle: "Start with a template or build your own"
+
+# ─────────────────────────────────────────────
+# DRAW PAGE — Step by step wizard
+# ─────────────────────────────────────────────
+draw:
+  stepper:
+    step_1: "Set Up"
+    step_2: "Public Number"
+    step_3: "Results"
+
+  setup:
+    teams_input:
+      label: "Who's in the draw?"
+      placeholder: "Paste names here — one per line, or separated by commas"
+      paste_hint: "Tip: copy-paste from a spreadsheet works great"
+      add_button: "Add another"
+    groups:
+      label: "How many groups?"
+      size_label: "How many per group?"
+    constraints:
+      label: "Any rules?"
+      add_button: "Add a rule"
+      types:
+        max_per_group:
+          label: "Limit per group"
+          description: "No more than N items with the same tag in one group"
+          example: "Example: 'No more than 2 European teams in one group'"
+        fixed_position:
+          label: "Lock someone in place"
+          description: "Always put a specific item in a specific group"
+          example: "Example: 'Host country always in Group A'"
+      empty_state: "No rules yet. The draw will be completely random."
+
+  seed:
+    title: "Choose your public number"
+    subtitle: "This is the single number that decides the draw. Everyone can see it. No one can change it after the fact."
+    tabs:
+      dice:
+        label: "Roll Dice"
+        description: "Roll 20 ten-sided dice — on camera if you want witnesses"
+        instruction: "Click each die to enter your roll (0-9)"
+        randomness_note: "20 dice gives you plenty of randomness for any draw"
+      beacon:
+        label: "Internet Randomness"
+        description: "Grab a number from an independent public service that nobody controls"
+        fetch_button: "Get Latest Number"
+        explainer: "This number comes from the League of Entropy — a network of independent organizations that publish random numbers every 30 seconds. No single organization controls it."
+        fetched: "Got it!"
+      custom:
+        label: "Your Own Number"
+        description: "Type or paste any text — a phrase, a number, anything"
+        placeholder: "Type anything here..."
+        warning_short: "Short inputs mean less randomness. Consider using dice or the internet source for high-stakes draws."
+      hybrid:
+        label: "Combined (Recommended for high stakes)"
+        description: "Use BOTH dice rolls and an internet number together — the gold standard"
+        explainer: "We combine your dice rolls with the internet number into one. Even if one source was compromised, the other keeps it fair."
+      multi_party:
+        label: "Multiple People"
+        description: "Each person contributes a number. Nobody alone can rig it."
+        add_party: "Add another person"
+        party_label: "Person {n}'s number"
+        explainer: "We combine all contributions together. As long as at least one person is honest, the draw is fair."
+
+    fingerprint:
+      label: "Digital fingerprint of your number"
+      explainer: "This is a one-way summary of your public number. Think of it like a tamper-evident seal — it proves the number wasn't changed after the draw."
+      # NOTE TO DEVELOPER: show the SHA-256 hex here in monospace,
+      # but label it "digital fingerprint", never "SHA-256 hash"
+
+    generate_button: "Run the Draw"
+    generating: "Finding a fair arrangement..."
+
+  results:
+    title: "Your draw is complete"
+    rules_check:
+      title: "Rules check"
+      all_passed: "All rules satisfied"
+      label_passed: "Passed"
+    attempts:
+      # Only show if cycle_walks > 0
+      label: "Arrangements checked before finding a valid one"
+      # Frame cycle-walking as a FEATURE, not a bug:
+      explainer: "The system tried {n} possible arrangements before finding one that satisfies all your rules. Every arrangement was equally likely."
+    share:
+      button: "Share & Verify"
+      copied_toast: "Link copied! Anyone with this link can independently check the result."
+      explainer: "This link contains everything needed to re-run the draw. Share it with anyone who wants to confirm the result."
+    export:
+      json_button: "Download as data file"
+      # PDF is Phase 2
+    receipt:
+      title: "Draw receipt"
+      toggle_label: "Show technical details"
+      # This is the only place where technical details are shown,
+      # and ONLY behind a toggle. Label fields plainly:
+      fields:
+        public_number: "Public number used"
+        fingerprint: "Digital fingerprint"
+        algorithm_version: "Draw method version"
+        timestamp: "Date and time (UTC)"
+        arrangements_checked: "Arrangements checked"
+
+# ─────────────────────────────────────────────
+# VERIFY PAGE
+# ─────────────────────────────────────────────
+verify:
+  title: "Check a draw result"
+  subtitle: "Paste a verification link or enter the details manually to confirm a draw was fair."
+  input:
+    url_label: "Paste the verification link"
+    url_placeholder: "https://..."
+    manual_toggle: "Or enter details manually"
+    verify_button: "Check It"
+    checking: "Re-running the draw from scratch..."
+  result:
+    match:
+      title: "Confirmed — This draw is genuine"
+      description: "We re-ran the draw using the same public number and got the exact same result. Nobody tampered with it."
+      icon: "shield-check"
+    mismatch:
+      title: "Mismatch — Something is wrong"
+      description: "We re-ran the draw and got a different result. The claimed result does not match the public number. This draw may have been altered."
+      icon: "shield-alert"
+    comparison_label: "Side-by-side comparison"
+
+# ─────────────────────────────────────────────
+# ABOUT PAGE — Layered: simple first, technical below
+# ─────────────────────────────────────────────
+about:
+  hero:
+    title: "Fair draws shouldn't require trust"
+    description: "When a tournament draw, a housing lottery, or a school assignment is run behind closed doors with secret software, you're told: 'trust us.' We think you deserve better."
+
+  story:
+    title: "The problem"
+    paragraphs:
+      - "Every year, billions of people watch FIFA draw World Cup groups. Schools assign thousands of students to classrooms. Cities allocate affordable housing to millions of applicants. All by 'random' draw."
+      - "But here's the thing: there's no way to check. The software is secret. The method is unpublished. You're told the result is fair, and you have no choice but to believe it."
+      - "In 2021, UEFA had to void and redo a Champions League draw after a software error — with millions watching live. In 2025, a mathematician proved that FIFA's own draw method is mathematically biased against certain teams."
+      - "We built this tool so that any draw — for a World Cup, a school lottery, a raffle, or a pickup basketball game — can be checked by anyone."
+
+  how_it_really_works:
+    title: "How it really works (no jargon, we promise)"
+    steps:
+      - title: "Imagine every possible arrangement written on a card"
+        description: "For a 48-team World Cup draw, there are more valid group arrangements than atoms in the universe. Imagine each one written on its own card."
+      - title: "The public number picks exactly one card"
+        description: "Your public number (from dice, an internet source, or both) determines which single card gets picked. Different numbers pick different cards. Every card is equally likely."
+      - title: "Anyone can look up which card a number picks"
+        description: "The math that connects a number to a card is open and published. Given the same number, anyone in the world will always get the same card. That's what makes it checkable."
+      - title: "No one can work backwards"
+        description: "You can't start with a desired result and figure out which number produces it — not without trying more numbers than there are atoms in the universe. So no one can rig it by picking a 'lucky' number."
+
+  # ONLY shown behind a "For developers & researchers" toggle
+  technical_details:
+    toggle_label: "For developers & researchers"
+    content: |
+      The draw engine uses Format-Preserving Encryption (FPE) built on
+      an unbalanced Feistel cipher (8 rounds, HMAC-SHA256 PRF) with
+      cycle-walking for constraint satisfaction. Permutations are
+      ranked/unranked via Lehmer codes. The rank/unrank bijection
+      for k-subsets follows Narayana Pandita's combinadic (1356 CE).
+      Security: PRP-secure per Hoang-Rogaway (CRYPTO 2010).
+      Cycle-walking: input-independent per Black-Rogaway (CT-RSA 2002).
+      All computation runs client-side via WebCrypto API. Zero backend.
+      Source code is open. See our GitHub for the full implementation.
+
+  attribution:
+    title: "Standing on ancient shoulders"
+    description: "The core mathematical method in this tool was invented by Narayana Pandita, an Indian mathematician, in 1356 CE — over 600 years before it was independently rediscovered in the West. We named our project in his honor."
+    narayana:
+      name: "Narayana Pandita"
+      work: "Ganita Kaumudi (गणित कौमुदी)"
+      year: "1356 CE"
+      contribution: "Invented the method for systematically listing all possible ways to choose items from a group — the mathematical foundation that makes our draw system work."
+
+  author:
+    credit: "Built by Aditya Tiwari"
+    project: "Part of the NarayanaKit project"
+
+# ─────────────────────────────────────────────
+# ERROR MESSAGES — human, not robotic
+# ─────────────────────────────────────────────
+errors:
+  constraints_too_tight: "We tried {n} arrangements but couldn't find one that satisfies all your rules. Try relaxing a rule — for example, allow 3 per group instead of 2."
+  beacon_unreachable: "Couldn't reach the internet randomness service. Try again in a moment, or use dice or a custom number instead."
+  invalid_verify_link: "This verification link doesn't look right. Make sure you copied the full link."
+  teams_too_few: "You need at least as many items as slots to run a draw."
+  teams_too_many: "That's a lot of items! The maximum is {max}."
+  seed_empty: "Enter a public number before running the draw."
+
+# ─────────────────────────────────────────────
+# PRESET DESCRIPTIONS — Plain language
+# ─────────────────────────────────────────────
+presets:
+  fifa_2026:
+    name: "FIFA World Cup 2026"
+    description: "48 teams into 12 groups of 4. Respects FIFA's rules about which countries can share a group."
+    badge: "Most Popular"
+
+  champions_league:
+    name: "Champions League"
+    description: "32 clubs into 8 groups of 4. No two clubs from the same country in one group."
+
+  generic_lottery:
+    name: "Custom Draw"
+    description: "You decide: how many items, how many groups, what rules. Works for raffles, classroom assignments, team-building — anything."
+
+  esports_bracket:
+    name: "Esports Tournament"
+    description: "Seed players or teams into a bracket. Top seeds are kept apart so the best don't meet in round one."
+
+  school_lottery:
+    name: "School Assignment"
+    description: "Assign students to schools or classrooms fairly, with optional balancing rules."
+
+# ─────────────────────────────────────────────
+# FOOTER
+# ─────────────────────────────────────────────
+footer:
+  tagline: "Fair draws anyone can check."
+  open_source: "Open source — inspect the code yourself"
+  github_label: "View on GitHub"
+  attribution: "Mathematical foundation by Narayana Pandita (1356 CE)"

@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 214 60% 10%;
+    --foreground: 210 40% 94%;
+    --card: 214 50% 13%;
+    --card-foreground: 210 40% 94%;
+    --popover: 214 50% 13%;
+    --popover-foreground: 210 40% 94%;
+    --primary: 161 100% 45%;
+    --primary-foreground: 214 60% 10%;
+    --secondary: 214 40% 20%;
+    --secondary-foreground: 210 40% 94%;
+    --muted: 214 40% 18%;
+    --muted-foreground: 210 20% 60%;
+    --accent: 161 100% 45%;
+    --accent-foreground: 214 60% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 30% 22%;
+    --input: 214 30% 22%;
+    --ring: 161 100% 45%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-navy text-[#F0F4F8] font-body antialiased;
+    background-color: #0A1628;
+  }
+
+  h1, h2, h3 {
+    @apply font-display;
+  }
+
+  code, .mono {
+    @apply font-mono;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A1628;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E3050;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00E5A0;
+}
+
+/* Focus rings */
+:focus-visible {
+  @apply outline-none ring-2 ring-teal ring-offset-2 ring-offset-navy;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

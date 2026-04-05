@@ -1,0 +1,46 @@
+brand:
+  name: "FairDraw"
+  tagline: "Provably fair. Publicly verifiable."
+  description: "Cryptographic tool for verifiable fair random assignments"
+  domain: "fairdraw.io"
+  logo_text: "FairDraw"
+  logo_svg: null
+  favicon: "/favicon.svg"
+  og_image: "/og-image.png"
+
+  legal:
+    copyright_holder: "NarayanaKit Contributors"
+    license: "MIT"
+    github_url: "https://github.com/example/fairdraw"
+    privacy_policy_url: null
+    terms_url: null
+
+  social:
+    twitter_handle: null
+    discord_url: null
+
+  seo:
+    title_template: "{brand} — {tagline}"
+    meta_description: "Generate cryptographically verifiable fair tournament draws, lottery assignments, and group allocations. Open source. Zero trust required."
+    keywords: ["verifiable fairness", "tournament draw", "cryptographic lottery", "FPE", "fair allocation"]
+
+  theme:
+    primary_bg: "#0A1628"
+    accent: "#00E5A0"
+    warning: "#FFB547"
+    error: "#FF4B4B"
+    surface: "#111D32"
+    text_primary: "#F0F4F8"
+    text_muted: "#8899AA"
+    font_display: "Fraunces"
+    font_body: "DM Sans"
+    font_mono: "JetBrains Mono"
+
+  attribution:
+    author: "Aditya Tiwari"
+    project_origin: "NarayanaKit — D006 discovery from madhva_exp project"
+    narayana_pandita:
+      text: "Ganita Kaumudi (गणित कौमुदी), Chapter 13"
+      date: "1356 CE"
+      location: "India"
+      contribution: "Nashta (unranking) and Uddishta (ranking) algorithms — the first known rank/unrank bijection for k-subsets, predating Western rediscovery by Buckles (1977) by 621 years."

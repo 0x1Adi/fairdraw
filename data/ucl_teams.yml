@@ -1,0 +1,41 @@
+# UEFA Champions League — 32 teams (placeholder)
+teams:
+  # Pot 1 (title holders + domestic champions by coefficient)
+  - { name: "Real Madrid", country: "Spain", pot: 1 }
+  - { name: "Manchester City", country: "England", pot: 1 }
+  - { name: "Bayern Munich", country: "Germany", pot: 1 }
+  - { name: "Paris Saint-Germain", country: "France", pot: 1 }
+  - { name: "Liverpool", country: "England", pot: 1 }
+  - { name: "Inter Milan", country: "Italy", pot: 1 }
+  - { name: "Porto", country: "Portugal", pot: 1 }
+  - { name: "Benfica", country: "Portugal", pot: 1 }
+
+  # Pot 2
+  - { name: "Barcelona", country: "Spain", pot: 2 }
+  - { name: "Atlético Madrid", country: "Spain", pot: 2 }
+  - { name: "Borussia Dortmund", country: "Germany", pot: 2 }
+  - { name: "RB Leipzig", country: "Germany", pot: 2 }
+  - { name: "Chelsea", country: "England", pot: 2 }
+  - { name: "Arsenal", country: "England", pot: 2 }
+  - { name: "Juventus", country: "Italy", pot: 2 }
+  - { name: "AC Milan", country: "Italy", pot: 2 }
+
+  # Pot 3
+  - { name: "Napoli", country: "Italy", pot: 3 }
+  - { name: "Lazio", country: "Italy", pot: 3 }
+  - { name: "Sevilla", country: "Spain", pot: 3 }
+  - { name: "Villarreal", country: "Spain", pot: 3 }
+  - { name: "Ajax", country: "Netherlands", pot: 3 }
+  - { name: "PSV Eindhoven", country: "Netherlands", pot: 3 }
+  - { name: "Celtic", country: "Scotland", pot: 3 }
+  - { name: "Rangers", country: "Scotland", pot: 3 }
+
+  # Pot 4
+  - { name: "Shakhtar Donetsk", country: "Ukraine", pot: 4 }
+  - { name: "Red Bull Salzburg", country: "Austria", pot: 4 }
+  - { name: "Club Brugge", country: "Belgium", pot: 4 }
+  - { name: "Sporting CP", country: "Portugal", pot: 4 }
+  - { name: "Marseille", country: "France", pot: 4 }
+  - { name: "Lyon", country: "France", pot: 4 }
+  - { name: "Galatasaray", country: "Turkey", pot: 4 }
+  - { name: "Fenerbahce", country: "Turkey", pot: 4 }

@@ -1,0 +1,100 @@
+presets:
+  - id: "fifa_2026"
+    name: "FIFA World Cup 2026"
+    description: "48 teams → 12 groups of 4 (one per pot)"
+    category: "sports"
+    featured: true
+    icon: "trophy"
+    group_count: 12
+    group_size: 4
+    assignment_type: "permutation_per_pot"
+    pots:
+      - id: "pot1"
+        name: "Pot 1"
+        locked: true
+        teams: []
+      - id: "pot2"
+        name: "Pot 2"
+        locked: false
+        teams: []
+      - id: "pot3"
+        name: "Pot 3"
+        locked: false
+        teams: []
+      - id: "pot4"
+        name: "Pot 4"
+        locked: false
+        teams: []
+    constraints:
+      - type: "max_per_group"
+        field: "confederation"
+        max: 2
+        description: "No group has more than 2 teams from same confederation"
+      - type: "fixed_position"
+        field: "is_host"
+        group: 0
+        description: "Host nation placed in Group A"
+    teams_file: "data/fifa_2026_teams.yml"
+
+  - id: "champions_league"
+    name: "UEFA Champions League"
+    description: "32 teams → 8 groups of 4"
+    category: "sports"
+    featured: true
+    icon: "star"
+    group_count: 8
+    group_size: 4
+    assignment_type: "permutation_per_pot"
+    pots:
+      - { id: "pot1", name: "Pot 1", locked: true, teams: [] }
+      - { id: "pot2", name: "Pot 2", locked: false, teams: [] }
+      - { id: "pot3", name: "Pot 3", locked: false, teams: [] }
+      - { id: "pot4", name: "Pot 4", locked: false, teams: [] }
+    constraints:
+      - type: "max_per_group"
+        field: "country"
+        max: 1
+        description: "No two teams from same country in one group"
+    teams_file: "data/ucl_teams.yml"
+
+  - id: "generic_lottery"
+    name: "Custom Lottery / Raffle"
+    description: "Assign N items to M groups with optional constraints"
+    category: "general"
+    featured: true
+    icon: "shuffle"
+    group_count: null
+    group_size: null
+    assignment_type: "permutation"
+    pots: []
+    constraints: []
+    teams_file: null
+
+  - id: "esports_bracket"
+    name: "Esports Tournament Seeding"
+    description: "16/32 team bracket with seed-based constraints"
+    category: "esports"
+    featured: true
+    icon: "gamepad"
+    group_count: null
+    group_size: null
+    assignment_type: "permutation"
+    pots: []
+    constraints:
+      - type: "seed_separation"
+        field: "seed"
+        description: "Top seeds placed in separate bracket halves"
+    teams_file: null
+
+  - id: "school_lottery"
+    name: "School Assignment Lottery"
+    description: "Assign students to schools/classes fairly"
+    category: "civic"
+    featured: false
+    icon: "graduation-cap"
+    group_count: null
+    group_size: null
+    assignment_type: "permutation"
+    pots: []
+    constraints: []
+    teams_file: null
